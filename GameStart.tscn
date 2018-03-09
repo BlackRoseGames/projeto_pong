@@ -170,9 +170,9 @@ y_direction = -1
 
 shape = SubResource( 4 )
 
-[connection signal="area_entered" from="left" to="ball" method="_faster"]
-
 [connection signal="area_entered" from="left" to="left" method="_on_area_entered"]
+
+[connection signal="area_entered" from="left" to="ball" method="_faster"]
 
 [connection signal="area_entered" from="right" to="right" method="_on_area_entered"]
 
