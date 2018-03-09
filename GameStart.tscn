@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ball.gd" type="Script" id=1]
 [ext_resource path="res://imgs/ball.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://imgs/player1.png" type="Texture" id=4]
 [ext_resource path="res://imgs/player2.png" type="Texture" id=5]
 [ext_resource path="res://Walls.gd" type="Script" id=6]
+[ext_resource path="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-02.png" type="Texture" id=7]
+[ext_resource path="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-03.png" type="Texture" id=8]
+[ext_resource path="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-04.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -169,6 +172,42 @@ y_direction = -1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" index="0"]
 
 shape = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="." index="5"]
+
+scale = Vector2( 0.1, 0.1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D" index="0"]
+
+position = Vector2( 624.98, 598.572 )
+scale = Vector2( 1, 1 )
+animation = "default"
+
+[node name="Pong Jam Fundo e plaquinhas-02" type="Sprite" parent="Area2D/AnimatedSprite" index="0"]
+
+position = Vector2( 146.78, 224.102 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+
+[node name="Pong Jam Fundo e plaquinhas-03" type="Sprite" parent="Area2D/AnimatedSprite" index="1"]
+
+position = Vector2( 146.78, 224.102 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+
+[node name="Pong Jam Fundo e plaquinhas-04" type="Sprite" parent="Area2D/AnimatedSprite" index="2"]
+
+position = Vector2( 146.78, 224.102 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 9 )
 
 [connection signal="area_entered" from="left" to="left" method="_on_area_entered"]
 
