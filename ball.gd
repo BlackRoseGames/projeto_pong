@@ -20,3 +20,4 @@ func _process(delta):
 
 func _faster(area):
 	speed *= SPEED_MOD
+	$Pluck.play()
