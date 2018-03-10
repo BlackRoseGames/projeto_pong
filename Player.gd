@@ -14,13 +14,7 @@ func _process(delta):
 
 func _on_area_entered( area ):
 	if area.get_name() == "ball":
-		# assign new direction
-		var direction = 0
-		if area.position.y > (position.y + 10):
-			direction = 1
-		elif area.position.y < (position.y - 10):
-			direction = -1
-		area.direction = Vector2(ball_dir, direction).normalized()
+		area.direction = Vector2(ball_dir, area.direction.y).normalized()
 
 
 func _on_left_area_entered(area):

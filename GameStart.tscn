@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ball.gd" type="Script" id=1]
 [ext_resource path="res://imgs/ball.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://imgs/player1.png" type="Texture" id=4]
 [ext_resource path="res://imgs/player2.png" type="Texture" id=5]
 [ext_resource path="res://Walls.gd" type="Script" id=6]
+[ext_resource path="res://wall.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -27,13 +28,18 @@ extents = Vector2( 184.698, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 528.781, 10 )
 
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2, 15 )
+
 [node name="Node2D" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="ball" type="Area2D" parent="." index="0"]
 
-position = Vector2( 511.252, 301.192 )
+position = Vector2( 510.144, 300.084 )
 scale = Vector2( 0.5, 0.5 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -65,8 +71,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="left" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 30.8593, 300.531 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.75, 0.75 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -80,7 +87,7 @@ __meta__ = {
 "_edit_group_": true
 }
 ball_dir = 1
-MOVE_SPEED = 800
+MOVE_SPEED = 400
 
 [node name="Sprite" type="Sprite" parent="left" index="0"]
 
@@ -98,7 +105,7 @@ shape = SubResource( 2 )
 
 editor/display_folded = true
 position = Vector2( 989.859, 300.531 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.75, 0.75 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -112,7 +119,7 @@ __meta__ = {
 "_edit_group_": true
 }
 ball_dir = -1
-MOVE_SPEED = 800
+MOVE_SPEED = 400
 
 [node name="Sprite" type="Sprite" parent="right" index="0"]
 
@@ -128,7 +135,8 @@ shape = SubResource( 2 )
 
 [node name="WallTop" type="Area2D" parent="." index="3"]
 
-position = Vector2( 480, 1 )
+position = Vector2( 480.207, 3.89234 )
+scale = Vector2( 1.00648, 1.12164 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -152,7 +160,8 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="WallBottom" type="Area2D" parent="." index="4"]
 
-position = Vector2( 505.218, 608.853 )
+editor/display_folded = true
+position = Vector2( 504.933, 609.995 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -170,14 +179,62 @@ y_direction = -1
 
 shape = SubResource( 4 )
 
-[connection signal="area_entered" from="left" to="ball" method="_faster"]
+[node name="wall" type="Area2D" parent="." index="5"]
+
+position = Vector2( -10.0803, 298.892 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" index="0"]
+
+scale = Vector2( 5, 20 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="wall2" type="Area2D" parent="." index="6"]
+
+position = Vector2( 1033.69, 298.892 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" index="0"]
+
+scale = Vector2( 5, 20 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [connection signal="area_entered" from="left" to="left" method="_on_area_entered"]
+
+[connection signal="area_entered" from="left" to="ball" method="_faster"]
 
 [connection signal="area_entered" from="right" to="right" method="_on_area_entered"]
 
 [connection signal="area_entered" from="WallTop" to="WallTop" method="_on_area_entered"]
 
 [connection signal="area_entered" from="WallBottom" to="WallBottom" method="_on_area_entered"]
+
+[connection signal="area_entered" from="wall" to="wall" method="_on_wall_area_entered"]
+
+[connection signal="area_entered" from="wall2" to="wall2" method="_on_wall_area_entered"]
 
 
