@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/blockinhos em uma imagem so-09.png-08fc81a3fbd7ec489296971c29a13cb1.stex"
+
+[deps]
+
+source_file="res://imgs/Sprites dos Blocks/blockinhos em uma imagem so-09.png"
+source_md5="2973c42ace26eef9a871358b3b023eb4"
+
+dest_files=[ "res://.import/blockinhos em uma imagem so-09.png-08fc81a3fbd7ec489296971c29a13cb1.stex" ]
+dest_md5="5c495e965a00cd13b02e6c8c8fcdbb37"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

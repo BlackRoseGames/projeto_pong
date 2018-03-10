@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ball.gd" type="Script" id=1]
 [ext_resource path="res://imgs/ball.png" type="Texture" id=2]
@@ -6,9 +6,7 @@
 [ext_resource path="res://imgs/player1.png" type="Texture" id=4]
 [ext_resource path="res://imgs/player2.png" type="Texture" id=5]
 [ext_resource path="res://Walls.gd" type="Script" id=6]
-[ext_resource path="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-02.png" type="Texture" id=7]
-[ext_resource path="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-03.png" type="Texture" id=8]
-[ext_resource path="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-04.png" type="Texture" id=9]
+[ext_resource path="res://imgs/Sprites dos Blocks de verdade.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -30,8 +28,28 @@ extents = Vector2( 184.698, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 528.781, 10 )
 
+[sub_resource type="Animation" id=5]
+
+resource_name = "brilhante blockinho"
+length = 0.6
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
 [node name="Node2D" type="Node2D" index="0"]
 
+position = Vector2( -65.1389, -89.786 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ball" type="Area2D" parent="." index="0"]
@@ -173,7 +191,7 @@ y_direction = -1
 
 shape = SubResource( 4 )
 
-[node name="Area2D" type="Area2D" parent="." index="5"]
+[node name="Bloquinho" type="Area2D" parent="." index="5"]
 
 scale = Vector2( 0.1, 0.1 )
 input_pickable = true
@@ -185,29 +203,23 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D" index="0"]
+[node name="Sprite" type="Sprite" parent="Bloquinho" index="0"]
 
-position = Vector2( 624.98, 598.572 )
-scale = Vector2( 1, 1 )
-animation = "default"
-
-[node name="Pong Jam Fundo e plaquinhas-02" type="Sprite" parent="Area2D/AnimatedSprite" index="0"]
-
-position = Vector2( 146.78, 224.102 )
-scale = Vector2( 1, 1 )
+position = Vector2( 5107.09, 4364.29 )
+scale = Vector2( 0.876187, 0.876187 )
 texture = ExtResource( 7 )
+hframes = 3
+_sections_unfolded = [ "Animation" ]
 
-[node name="Pong Jam Fundo e plaquinhas-03" type="Sprite" parent="Area2D/AnimatedSprite" index="1"]
+[node name="Anim Block brilhando" type="AnimationPlayer" parent="Bloquinho/Sprite" index="0"]
 
-position = Vector2( 146.78, 224.102 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 8 )
-
-[node name="Pong Jam Fundo e plaquinhas-04" type="Sprite" parent="Area2D/AnimatedSprite" index="2"]
-
-position = Vector2( 146.78, 224.102 )
-scale = Vector2( 1, 1 )
-texture = ExtResource( 9 )
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/brilhante blockinho" = SubResource( 5 )
+blend_times = [  ]
 
 [connection signal="area_entered" from="left" to="left" method="_on_area_entered"]
 
