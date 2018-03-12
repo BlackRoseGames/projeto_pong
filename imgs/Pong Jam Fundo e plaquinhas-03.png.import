@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Pong Jam Fundo e plaquinhas-03.png-654b7ca4dab35f0aa94db2a4f8cf2b58.stex"
+
+[deps]
+
+source_file="res://imgs/Pong Jam Fundo e plaquinhas-03.png"
+source_md5="33931d964b1fd03fcfede1a1d74bfc2b"
+
+dest_files=[ "res://.import/Pong Jam Fundo e plaquinhas-03.png-654b7ca4dab35f0aa94db2a4f8cf2b58.stex" ]
+dest_md5="e2fe0ff358fd514890b629d23cfb3151"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
