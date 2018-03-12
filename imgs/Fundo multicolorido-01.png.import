@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Fundo multicolorido-01.png-05aa60013aebf139b85b7a4162887fc9.stex"
+
+[deps]
+
+source_file="res://imgs/Fundo multicolorido-01.png"
+source_md5="dc0d5eed9b110f6b6531be13274965f6"
+
+dest_files=[ "res://.import/Fundo multicolorido-01.png-05aa60013aebf139b85b7a4162887fc9.stex" ]
+dest_md5="7c58a01ac5bd2b2a913ced328423ee6b"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

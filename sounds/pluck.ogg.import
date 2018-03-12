@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pluck.ogg-5b0ed62139e0e75ee486be630ec92909.oggstr"
+
+[deps]
+
+source_file="res://sounds/pluck.ogg"
+source_md5="19c20641dee78933c9bf9be0537f7c07"
+
+dest_files=[ "res://.import/pluck.ogg-5b0ed62139e0e75ee486be630ec92909.oggstr" ]
+dest_md5="53200fddccbc61fc4f1a950ed5426696"
+
+[params]
+
+loop=true
+loop_offset=0

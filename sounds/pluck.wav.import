@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pluck.wav-fdd592088eaf52bd47823cc0fba1764e.sample"
+
+[deps]
+
+source_file="res://sounds/pluck.wav"
+source_md5="9677111fbca0498e29fee7db9fbe6348"
+
+dest_files=[ "res://.import/pluck.wav-fdd592088eaf52bd47823cc0fba1764e.sample" ]
+dest_md5="75c5615fa052f44241f6c79b5bcaeacd"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,11 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://ball.gd" type="Script" id=1]
 [ext_resource path="res://imgs/ball.png" type="Texture" id=2]
-[ext_resource path="res://Player.gd" type="Script" id=3]
-[ext_resource path="res://imgs/player1.png" type="Texture" id=4]
-[ext_resource path="res://imgs/player2.png" type="Texture" id=5]
-[ext_resource path="res://Walls.gd" type="Script" id=6]
+[ext_resource path="res://sounds/pluck.wav" type="AudioStream" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://imgs/player1.png" type="Texture" id=5]
+[ext_resource path="res://imgs/player2.png" type="Texture" id=6]
+[ext_resource path="res://Walls.gd" type="Script" id=7]
+[ext_resource path="res://wall.gd" type="Script" id=8]
+[ext_resource path="res://imgs/Pong Jam Fundo e plaquinhas-02.png" type="Texture" id=9]
+[ext_resource path="res://imgs/Pong Jam Fundo e plaquinhas-04.png" type="Texture" id=10]
+[ext_resource path="res://imgs/Sprites Bloquinho sumindo-05.png" type="Texture" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -27,13 +32,47 @@ extents = Vector2( 184.698, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 528.781, 10 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2, 15 )
+
+[sub_resource type="SpriteFrames" id=6]
+
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "BlocoSumindo"
+length = 0.35
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.08, 0.08 ), Vector2( 0.001, 0.001 ) ]
+}
+
+[node name="Main" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
 [node name="ball" type="Area2D" parent="." index="0"]
 
-position = Vector2( 511.252, 301.192 )
+editor/display_folded = true
+position = Vector2( 510.144, 300.084 )
 scale = Vector2( 0.5, 0.5 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -63,10 +102,22 @@ position = Vector2( 0.0510254, -0.336365 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Pluck" type="AudioStreamPlayer2D" parent="ball" index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Pause" ]
+
 [node name="left" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 30.8593, 300.531 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.75, 0.75 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -74,18 +125,18 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 ball_dir = 1
-MOVE_SPEED = 800
+MOVE_SPEED = 400
 
 [node name="Sprite" type="Sprite" parent="left" index="0"]
 
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="left" index="1"]
@@ -98,7 +149,7 @@ shape = SubResource( 2 )
 
 editor/display_folded = true
 position = Vector2( 989.859, 300.531 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.75, 0.75 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -106,18 +157,18 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 ball_dir = -1
-MOVE_SPEED = 800
+MOVE_SPEED = 400
 
 [node name="Sprite" type="Sprite" parent="right" index="0"]
 
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right" index="1"]
@@ -128,7 +179,9 @@ shape = SubResource( 2 )
 
 [node name="WallTop" type="Area2D" parent="." index="3"]
 
-position = Vector2( 480, 1 )
+editor/display_folded = true
+position = Vector2( 480.207, 3.89234 )
+scale = Vector2( 1.00648, 1.12164 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -136,7 +189,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -152,7 +205,8 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="WallBottom" type="Area2D" parent="." index="4"]
 
-position = Vector2( 505.218, 608.853 )
+editor/display_folded = true
+position = Vector2( 504.933, 609.995 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -160,7 +214,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -170,14 +224,134 @@ y_direction = -1
 
 shape = SubResource( 4 )
 
-[connection signal="area_entered" from="left" to="ball" method="_faster"]
+[node name="wall" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( -10.0803, 298.892 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" index="0"]
+
+scale = Vector2( 5, 20 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Bloco" type="Area2D" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 9.06332, 145.013 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="BlocoNormal" type="AnimatedSprite" parent="Bloco" index="0"]
+
+position = Vector2( 200.566, 242.316 )
+scale = Vector2( 0.0773616, 0.0773616 )
+frames = SubResource( 6 )
+animation = "default"
+frame = 2
+playing = true
+
+[node name="BlocoSumindo" type="Sprite" parent="Bloco" index="1"]
+
+editor/display_folded = true
+position = Vector2( 246.889, 242.16 )
+scale = Vector2( 0.0796743, 0.0796743 )
+texture = ExtResource( 11 )
+region_rect = Rect2( 357, 81, 0, 2 )
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bloco/BlocoSumindo" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/BlocoSumindo = SubResource( 7 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="wall2" type="Area2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 1033.69, 298.892 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2" index="0"]
+
+scale = Vector2( 5, 20 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Camera2D" type="Camera2D" parent="." index="8"]
+
+position = Vector2( 511.911, 300 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="left" to="left" method="_on_area_entered"]
+
+[connection signal="area_entered" from="left" to="ball" method="_faster"]
+
+[connection signal="area_entered" from="right" to="ball" method="_faster"]
 
 [connection signal="area_entered" from="right" to="right" method="_on_area_entered"]
 
 [connection signal="area_entered" from="WallTop" to="WallTop" method="_on_area_entered"]
 
 [connection signal="area_entered" from="WallBottom" to="WallBottom" method="_on_area_entered"]
+
+[connection signal="area_entered" from="wall" to="wall" method="_on_wall_area_entered"]
+
+[connection signal="area_entered" from="wall2" to="wall2" method="_on_wall_area_entered"]
 
 

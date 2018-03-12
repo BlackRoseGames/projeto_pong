@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Estrelas Parallax-02.png-13d65f6ee7bed7aa8231b1abd4bfa937.stex"
+
+[deps]
+
+source_file="res://imgs/Estrelas Parallax-02.png"
+source_md5="0fa92637337146c6e1575ebc3402c4dd"
+
+dest_files=[ "res://.import/Estrelas Parallax-02.png-13d65f6ee7bed7aa8231b1abd4bfa937.stex" ]
+dest_md5="e885d44524a5b9de78b930ecd82f56c2"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
