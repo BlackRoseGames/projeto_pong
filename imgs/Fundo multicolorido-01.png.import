@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pong Jam Fundo e plaquinhas-04.png-5555639a27c9e1dbc816d6a2c8ad551d.stex"
+path="res://.import/Fundo multicolorido-01.png-05aa60013aebf139b85b7a4162887fc9.stex"
 
 [deps]
 
-source_file="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-04.png"
-source_md5="1b5a2d756c21bb37da7b0ec61c84465f"
+source_file="res://imgs/Fundo multicolorido-01.png"
+source_md5="dc0d5eed9b110f6b6531be13274965f6"
 
-dest_files=[ "res://.import/Pong Jam Fundo e plaquinhas-04.png-5555639a27c9e1dbc816d6a2c8ad551d.stex" ]
-dest_md5="7795c54b24ed873d29e11c6acae99836"
+dest_files=[ "res://.import/Fundo multicolorido-01.png-05aa60013aebf139b85b7a4162887fc9.stex" ]
+dest_md5="7c58a01ac5bd2b2a913ced328423ee6b"
 
 [params]
 

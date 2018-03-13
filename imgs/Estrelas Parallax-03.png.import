@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pong Jam Fundo e plaquinhas-03.png-c2663fbbe2013133bbac8740659ec9de.stex"
+path="res://.import/Estrelas Parallax-03.png-51f9071eab2742b190f33ed11083e1ce.stex"
 
 [deps]
 
-source_file="res://imgs/Sprites dos Blocks/Pong Jam Fundo e plaquinhas-03.png"
-source_md5="33931d964b1fd03fcfede1a1d74bfc2b"
+source_file="res://imgs/Estrelas Parallax-03.png"
+source_md5="b46ccc954929f638a4489f96341a5f8f"
 
-dest_files=[ "res://.import/Pong Jam Fundo e plaquinhas-03.png-c2663fbbe2013133bbac8740659ec9de.stex" ]
-dest_md5="e2fe0ff358fd514890b629d23cfb3151"
+dest_files=[ "res://.import/Estrelas Parallax-03.png-51f9071eab2742b190f33ed11083e1ce.stex" ]
+dest_md5="20e4201c3c577ca36013c3233dbbc8a3"
 
 [params]
 

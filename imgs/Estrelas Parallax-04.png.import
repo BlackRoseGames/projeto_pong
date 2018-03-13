@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sprites dos Blocks de verdade.png-7b6a0c04645908f92fc196c2a99af0a6.stex"
+path="res://.import/Estrelas Parallax-04.png-1612c3d9dc4a2e9a9abb503e66583761.stex"
 
 [deps]
 
-source_file="res://imgs/Sprites dos Blocks de verdade.png"
-source_md5="b853c60499ef348b1875c9a9637486a9"
+source_file="res://imgs/Estrelas Parallax-04.png"
+source_md5="07673f09cd623e7e939c4ed4bbe2328e"
 
-dest_files=[ "res://.import/Sprites dos Blocks de verdade.png-7b6a0c04645908f92fc196c2a99af0a6.stex" ]
-dest_md5="db3da37afe5180932188688e7140256f"
+dest_files=[ "res://.import/Estrelas Parallax-04.png-1612c3d9dc4a2e9a9abb503e66583761.stex" ]
+dest_md5="5e76bcd5adb188456de820ec8da21c1c"
 
 [params]
 
