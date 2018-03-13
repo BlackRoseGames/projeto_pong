@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pong Jam Fundo e plaquinhas-02.png-3b1db25116a94a10540941407db5adfe.stex"
+path="res://.import/blocks.png-55ece7a60928aefc1d4fdb698e21cde3.stex"
 
 [deps]
 
-source_file="res://imgs/Pong Jam Fundo e plaquinhas-02.png"
-source_md5="b19ed80c816bd778c6167db397503bf4"
+source_file="res://imgs/Objects/blocks.png"
+source_md5="6a37530f27d3e6cb7030377577ce2257"
 
-dest_files=[ "res://.import/Pong Jam Fundo e plaquinhas-02.png-3b1db25116a94a10540941407db5adfe.stex" ]
-dest_md5="ff054c94b37c491a786eab0439c7bd2b"
+dest_files=[ "res://.import/blocks.png-55ece7a60928aefc1d4fdb698e21cde3.stex" ]
+dest_md5="c339f16ad2b40ce9ed0b2ff5925c79ea"
 
 [params]
 
