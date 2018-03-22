@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fundo multicolorido-01.png-05aa60013aebf139b85b7a4162887fc9.stex"
+path="res://.import/Raq-Azul.png-509ff7eca1a15956f19db53b07a88215.stex"
 
 [deps]
 
-source_file="res://imgs/Fundo multicolorido-01.png"
-source_md5="dc0d5eed9b110f6b6531be13274965f6"
+source_file="res://scenes/player/Raq-Azul.png"
+source_md5="5144e8cc51270e6130139085bba44aa6"
 
-dest_files=[ "res://.import/Fundo multicolorido-01.png-05aa60013aebf139b85b7a4162887fc9.stex" ]
-dest_md5="7c58a01ac5bd2b2a913ced328423ee6b"
+dest_files=[ "res://.import/Raq-Azul.png-509ff7eca1a15956f19db53b07a88215.stex" ]
+dest_md5="b7aafa83f7fbbb137739f7feee8a642c"
 
 [params]
 

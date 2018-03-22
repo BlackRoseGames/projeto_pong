@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://imgs/Objects/blocks.png" type="Texture" id=1]
+[ext_resource path="res://scenes/bloco/blocks.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -127,7 +127,7 @@ _sections_unfolded = [ "Transform" ]
 
 texture = SubResource( 2 )
 region_enabled = true
-region_rect = Rect2( 100, 0, 50, 50 )
+region_rect = Rect2( 0, 0, 50, 50 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]

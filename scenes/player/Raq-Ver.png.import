@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Estrelas Parallax-02.png-13d65f6ee7bed7aa8231b1abd4bfa937.stex"
+path="res://.import/Raq-Ver.png-a18191c8145c51b6903ee0f83689932b.stex"
 
 [deps]
 
-source_file="res://imgs/Estrelas Parallax-02.png"
-source_md5="0fa92637337146c6e1575ebc3402c4dd"
+source_file="res://scenes/player/Raq-Ver.png"
+source_md5="430ab0f630b236fa54a82ad7568c2df9"
 
-dest_files=[ "res://.import/Estrelas Parallax-02.png-13d65f6ee7bed7aa8231b1abd4bfa937.stex" ]
-dest_md5="e885d44524a5b9de78b930ecd82f56c2"
+dest_files=[ "res://.import/Raq-Ver.png-a18191c8145c51b6903ee0f83689932b.stex" ]
+dest_md5="c6fb2748307fc25e46eea63967c96ff6"
 
 [params]
 

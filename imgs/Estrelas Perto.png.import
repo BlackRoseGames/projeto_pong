@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player2.png-e3661005e23bec20f5dc6701087dc88b.stex"
+path="res://.import/Estrelas Perto.png-f2fc198780271ca758c4dd524cf2b529.stex"
 
 [deps]
 
-source_file="res://imgs/player2.png"
-source_md5="3f8c3a7f12f4c2bbf21ed1096d659d95"
+source_file="res://imgs/Estrelas Perto.png"
+source_md5="30e80a35c36289c706fc4192f25556e1"
 
-dest_files=[ "res://.import/player2.png-e3661005e23bec20f5dc6701087dc88b.stex" ]
-dest_md5="da0c0effea7ca18a039742190c6ee1cc"
+dest_files=[ "res://.import/Estrelas Perto.png-f2fc198780271ca758c4dd524cf2b529.stex" ]
+dest_md5="f2f94c2a742d2472199b58caf21a3e4b"
 
 [params]
 

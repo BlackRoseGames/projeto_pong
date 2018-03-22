@@ -1,0 +1,255 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/GameManager.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ball/ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/player/player.gd" type="Script" id=3]
+[ext_resource path="res://scenes/player/Raq-Azul.png" type="Texture" id=4]
+[ext_resource path="res://scenes/player/Raq-Ver.png" type="Texture" id=5]
+[ext_resource path="res://fonts/a_lcdnova.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/goal/PlayerGoal.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 640, 10 )
+
+[sub_resource type="AtlasTexture" id=2]
+
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 50, 251 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Idle"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 50, 251 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 63 )
+
+[sub_resource type="AtlasTexture" id=5]
+
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 70, 251 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 63 )
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 72
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
+
+[node name="Game" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Ball" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 640, 360 )
+friction = 0.0
+contacts_reported = 1
+contact_monitor = true
+_sections_unfolded = [ "Angular", "Applied Forces", "Linear", "Transform" ]
+
+[node name="WallTop" type="KinematicBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 640, -10 )
+input_pickable = true
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WallBottom" type="KinematicBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 640, 730 )
+input_pickable = true
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="right" type="KinematicBody2D" parent="." index="3" groups=[
+"Player",
+]]
+
+editor/display_folded = true
+position = Vector2( 1240, 360 )
+scale = Vector2( 0.75, 0.75 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+MOVE_SPEED = 400
+
+[node name="Sprite" type="Sprite" parent="right" index="0"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="right/Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Idle = SubResource( 3 )
+blend_times = [  ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" index="1"]
+
+position = Vector2( -4, 0 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="left" type="KinematicBody2D" parent="." index="4" groups=[
+"Player",
+]]
+
+editor/display_folded = true
+position = Vector2( 40, 360 )
+scale = Vector2( 0.75, 0.75 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+MOVE_SPEED = 400.0
+
+[node name="Sprite" type="Sprite" parent="left" index="0"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 5 )
+_sections_unfolded = [ "Animation" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="left/Sprite" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left" index="1"]
+
+position = Vector2( 8, 0 )
+shape = SubResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player1" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 540.0
+margin_top = 10.0
+margin_right = 620.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Player2" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 680.0
+margin_top = 10.0
+margin_right = 760.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="PlayerGoal" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( -10, 360 )
+
+[node name="PlayerGoal2" parent="." index="8" instance=ExtResource( 7 )]
+
+position = Vector2( 1290, 360 )
+POINT_PLAYER = 2
+
+[connection signal="body_entered" from="PlayerGoal" to="PlayerGoal" method="_on_PlayerGoal_body_entered"]
+
+[connection signal="body_entered" from="PlayerGoal2" to="PlayerGoal2" method="_on_PlayerGoal_body_entered"]
+
+
