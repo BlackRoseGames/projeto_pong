@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Estrelas Parallax-03.png-51f9071eab2742b190f33ed11083e1ce.stex"
+path="res://.import/Estrelas Medias.png-ba27f88ae1fd5fc92ee541fa4936d910.stex"
 
 [deps]
 
-source_file="res://imgs/Estrelas Parallax-03.png"
-source_md5="b46ccc954929f638a4489f96341a5f8f"
+source_file="res://imgs/Estrelas Medias.png"
+source_md5="8ab4c8fb7ef661157e2a9b629982d443"
 
-dest_files=[ "res://.import/Estrelas Parallax-03.png-51f9071eab2742b190f33ed11083e1ce.stex" ]
-dest_md5="20e4201c3c577ca36013c3233dbbc8a3"
+dest_files=[ "res://.import/Estrelas Medias.png-ba27f88ae1fd5fc92ee541fa4936d910.stex" ]
+dest_md5="9ce95459e59ccb83a37a33024a58db30"
 
 [params]
 

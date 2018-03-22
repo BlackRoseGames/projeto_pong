@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player2.png-e3661005e23bec20f5dc6701087dc88b.stex"
+path="res://.import/Cyber Fundo.png-5e1fa2ac5d34a5fd7cedef144725e89a.stex"
 
 [deps]
 
-source_file="res://imgs/player2.png"
-source_md5="c0b77c8f0054be7f6b4f106501716f12"
+source_file="res://imgs/Cyber Fundo.png"
+source_md5="e51bc9068df5a7d190d4bcdfec342d0d"
 
-dest_files=[ "res://.import/player2.png-e3661005e23bec20f5dc6701087dc88b.stex" ]
-dest_md5="f2ba08ceb42f5540e90325ae591921a8"
+dest_files=[ "res://.import/Cyber Fundo.png-5e1fa2ac5d34a5fd7cedef144725e89a.stex" ]
+dest_md5="bbe59d7437e813acc47d78a66ff52088"
 
 [params]
 

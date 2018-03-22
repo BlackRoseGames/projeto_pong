@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Estrelas Parallax-04.png-1612c3d9dc4a2e9a9abb503e66583761.stex"
+path="res://.import/blocks.png-989207bce6f25d06c061bacdb38ff003.stex"
 
 [deps]
 
-source_file="res://imgs/Estrelas Parallax-04.png"
-source_md5="07673f09cd623e7e939c4ed4bbe2328e"
+source_file="res://scenes/bloco/blocks.png"
+source_md5="6a37530f27d3e6cb7030377577ce2257"
 
-dest_files=[ "res://.import/Estrelas Parallax-04.png-1612c3d9dc4a2e9a9abb503e66583761.stex" ]
-dest_md5="5e76bcd5adb188456de820ec8da21c1c"
+dest_files=[ "res://.import/blocks.png-989207bce6f25d06c061bacdb38ff003.stex" ]
+dest_md5="c339f16ad2b40ce9ed0b2ff5925c79ea"
 
 [params]
 

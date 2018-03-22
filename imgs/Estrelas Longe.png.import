@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blocks.png-55ece7a60928aefc1d4fdb698e21cde3.stex"
+path="res://.import/Estrelas Longe.png-4bd242e8ce905bcdb335fe9cdb1ef33a.stex"
 
 [deps]
 
-source_file="res://imgs/Objects/blocks.png"
-source_md5="6a37530f27d3e6cb7030377577ce2257"
+source_file="res://imgs/Estrelas Longe.png"
+source_md5="f402e59573a0943caa5b1efac5e3d9cd"
 
-dest_files=[ "res://.import/blocks.png-55ece7a60928aefc1d4fdb698e21cde3.stex" ]
-dest_md5="c339f16ad2b40ce9ed0b2ff5925c79ea"
+dest_files=[ "res://.import/Estrelas Longe.png-4bd242e8ce905bcdb335fe9cdb1ef33a.stex" ]
+dest_md5="5ab09b245d7cd4016eb19e35e58fa7c3"
 
 [params]
 
