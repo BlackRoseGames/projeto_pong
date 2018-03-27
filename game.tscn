@@ -17,7 +17,7 @@ extents = Vector2( 640, 10 )
 
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 50, 251 )
+region = Rect2( 0, 0, 67, 251 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
 
@@ -118,7 +118,6 @@ _sections_unfolded = [ "Transform" ]
 "Player",
 ]]
 
-editor/display_folded = true
 position = Vector2( 1240, 360 )
 scale = Vector2( 0.75, 0.75 )
 input_pickable = false
@@ -150,7 +149,7 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right" index="1"]
 
-position = Vector2( -4, 0 )
+position = Vector2( -8, 0 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
