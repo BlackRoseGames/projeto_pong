@@ -3,13 +3,13 @@
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://imgs/Cyber Fundo.png" type="Texture" id=2]
 [ext_resource path="res://animations/animation.anim" type="Animation" id=3]
-[ext_resource path="res://scenes/ball/ball.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/player/player.gd" type="Script" id=5]
-[ext_resource path="res://scenes/player/Raq-Azul.png" type="Texture" id=6]
-[ext_resource path="res://scenes/player/Raq-Ver.png" type="Texture" id=7]
-[ext_resource path="res://fonts/a_lcdnova.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://scenes/goal/PlayerGoal.tscn" type="PackedScene" id=9]
-[ext_resource path="res://imgs/REDE AMARELA NEON.png" type="Texture" id=10]
+[ext_resource path="res://imgs/REDE AMARELA NEON.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ball/ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/player/player.gd" type="Script" id=6]
+[ext_resource path="res://scenes/player/Raq-Azul.png" type="Texture" id=7]
+[ext_resource path="res://scenes/player/Raq-Ver.png" type="Texture" id=8]
+[ext_resource path="res://fonts/a_lcdnova.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://scenes/goal/PlayerGoal.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,7 +19,7 @@ extents = Vector2( 640, 10 )
 [sub_resource type="AtlasTexture" id=2]
 
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 67, 251 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -51,7 +51,7 @@ extents = Vector2( 10, 63 )
 [sub_resource type="AtlasTexture" id=5]
 
 flags = 4
-atlas = ExtResource( 7 )
+atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 70, 251 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -66,7 +66,7 @@ extents = Vector2( 10, 63 )
 size = 72
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 8 )
+font_data = ExtResource( 9 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [node name="Game" type="Node2D" index="0"]
@@ -129,7 +129,12 @@ __meta__ = {
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ball" parent="." index="3" instance=ExtResource( 4 )]
+[node name="REDE AMARELA NEON" type="Sprite" parent="." index="3"]
+
+position = Vector2( 640, 360 )
+texture = ExtResource( 4 )
+
+[node name="Ball" parent="." index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 640, 360 )
 friction = 0.0
@@ -137,7 +142,7 @@ contacts_reported = 1
 contact_monitor = true
 _sections_unfolded = [ "Angular", "Applied Forces", "Linear", "Transform" ]
 
-[node name="right" type="KinematicBody2D" parent="." index="4" groups=[
+[node name="right" type="KinematicBody2D" parent="." index="5" groups=[
 "Player",
 ]]
 
@@ -148,7 +153,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -178,7 +183,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="left" type="KinematicBody2D" parent="." index="5" groups=[
+[node name="left" type="KinematicBody2D" parent="." index="6" groups=[
 "Player",
 ]]
 
@@ -189,7 +194,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -217,7 +222,7 @@ position = Vector2( 8, 0 )
 shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player1" type="Label" parent="." index="6"]
+[node name="Player1" type="Label" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -241,7 +246,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Player2" type="Label" parent="." index="7"]
+[node name="Player2" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -263,19 +268,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="PlayerGoal" parent="." index="8" instance=ExtResource( 9 )]
+[node name="PlayerGoal" parent="." index="9" instance=ExtResource( 10 )]
 
 position = Vector2( -10, 360 )
 
-[node name="PlayerGoal2" parent="." index="9" instance=ExtResource( 9 )]
+[node name="PlayerGoal2" parent="." index="10" instance=ExtResource( 10 )]
 
 position = Vector2( 1290, 360 )
 POINT_PLAYER = 2
-
-[node name="REDE AMARELA NEON" type="Sprite" parent="." index="10"]
-
-position = Vector2( 640, 360 )
-texture = ExtResource( 10 )
 
 [connection signal="body_entered" from="PlayerGoal" to="PlayerGoal" method="_on_PlayerGoal_body_entered"]
 
