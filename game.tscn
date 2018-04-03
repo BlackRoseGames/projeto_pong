@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://imgs/Cyber Fundo.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/player/Raq-Ver.png" type="Texture" id=7]
 [ext_resource path="res://fonts/a_lcdnova.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://scenes/goal/PlayerGoal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://imgs/REDE AMARELA NEON.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -270,6 +271,11 @@ position = Vector2( -10, 360 )
 
 position = Vector2( 1290, 360 )
 POINT_PLAYER = 2
+
+[node name="REDE AMARELA NEON" type="Sprite" parent="." index="10"]
+
+position = Vector2( 640, 360 )
+texture = ExtResource( 10 )
 
 [connection signal="body_entered" from="PlayerGoal" to="PlayerGoal" method="_on_PlayerGoal_body_entered"]
 
