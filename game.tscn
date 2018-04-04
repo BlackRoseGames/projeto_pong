@@ -136,7 +136,7 @@ MAX_SPEED = 5.0
 MAX_KICKS = 6
 VELOCITY_MOD = 0.01
 
-[node name="right" type="KinematicBody2D" parent="." index="4" groups=[
+[node name="right" type="KinematicBody2D" parent="." index="5" groups=[
 "Player",
 ]]
 
@@ -177,7 +177,7 @@ position = Vector2( -8, 0 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="left" type="KinematicBody2D" parent="." index="5" groups=[
+[node name="left" type="KinematicBody2D" parent="." index="6" groups=[
 "Player",
 ]]
 
@@ -216,7 +216,7 @@ position = Vector2( 8, 0 )
 shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player1" type="Label" parent="." index="6"]
+[node name="Player1" type="Label" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -240,7 +240,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "Rect" ]
 
-[node name="Player2" type="Label" parent="." index="7"]
+[node name="Player2" type="Label" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0

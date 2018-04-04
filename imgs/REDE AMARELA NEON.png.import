@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/REDE AMARELA NEON.png-60f72f9bf2e536c22b08c45211b2a132.stex"
+
+[deps]
+
+source_file="res://imgs/REDE AMARELA NEON.png"
+source_md5="33acf81ebaec0f202aed38b81e53612f"
+
+dest_files=[ "res://.import/REDE AMARELA NEON.png-60f72f9bf2e536c22b08c45211b2a132.stex" ]
+dest_md5="8a216aeb557907f544848a27393e8941"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
