@@ -1,24 +1,21 @@
-extends Sprite
-export (float) var MAX_TIME
-var upToDown = true
-onready var tweenNode = get_node("Tween")
-onready var imageSize = self.texture.get_size()
-onready var screenSize = Vector2(1280, 720)
-onready var finalSizeY = imageSize.y-screenSize.y
-var startPosition = 1
-var finalPosition = 0
+extends ParallaxBackground
+export (float) var VELOCITY
+onready var parallax1 = get_child(0)
+onready var parallax2 = get_child(1)
+onready var parallax3 = get_child(2)
+onready var parallax4 = get_child(3)
 
+var offsetLoc = 0
 
 func _ready():
-	_tween_completed()
+	parallax1.motion_mirroring = parallax1.get_child(0).texture.get_size()
+	parallax2.motion_mirroring = parallax2.get_child(0).texture.get_size()
+	parallax3.motion_mirroring = parallax3.get_child(0).texture.get_size()
+	parallax4.motion_mirroring = parallax4.get_child(0).texture.get_size()
 
-func _tween_completed():
-	print()
-	if startPosition == 0:
-		finalPosition = 0
-		startPosition = finalSizeY
-	else:
-		finalPosition = finalSizeY
-		startPosition = 0
-	tweenNode.interpolate_property(self, "region_rect:position:y", startPosition, finalPosition, MAX_TIME, Tween.TRANS_SINE, Tween.EASE_IN_OUT, 0);
-	tweenNode.start()
+func _process(delta):
+	offsetLoc = offsetLoc + VELOCITY * delta
+	scroll_base_offset = Vector2(0, -offsetLoc)
+	parallax2.motion_offset = Vector2(0, -(offsetLoc*1.25))
+	parallax3.motion_offset = Vector2(0, -(offsetLoc*1.5))
+	parallax4.motion_offset = Vector2(0, -(offsetLoc*2))
