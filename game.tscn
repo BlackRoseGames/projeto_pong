@@ -1,13 +1,14 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fundo/Fundo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/ball/ball.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/player/player.gd" type="Script" id=4]
-[ext_resource path="res://scenes/player/Raq-Azul.png" type="Texture" id=5]
-[ext_resource path="res://scenes/player/Raq-Ver.png" type="Texture" id=6]
-[ext_resource path="res://fonts/a_lcdnova.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://scenes/goal/PlayerGoal.tscn" type="PackedScene" id=8]
+[ext_resource path="res://imgs/REDE AMARELA NEON.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ball/ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/player/player.gd" type="Script" id=5]
+[ext_resource path="res://scenes/player/Raq-Azul.png" type="Texture" id=6]
+[ext_resource path="res://scenes/player/Raq-Ver.png" type="Texture" id=7]
+[ext_resource path="res://fonts/a_lcdnova.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://scenes/goal/PlayerGoal.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,7 +18,7 @@ extents = Vector2( 640, 10 )
 [sub_resource type="AtlasTexture" id=2]
 
 flags = 4
-atlas = ExtResource( 5 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 67, 251 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -49,7 +50,7 @@ extents = Vector2( 10, 63 )
 [sub_resource type="AtlasTexture" id=5]
 
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 70, 251 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -64,7 +65,7 @@ extents = Vector2( 10, 63 )
 size = 72
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 
 [sub_resource type="DynamicFont" id=8]
@@ -72,7 +73,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
 size = 72
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=9]
@@ -80,7 +81,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 72
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 7 )
+font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [node name="Game" type="Node2D" index="0"]
@@ -125,7 +126,12 @@ __meta__ = {
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ball" parent="." index="3" instance=ExtResource( 3 )]
+[node name="REDE AMARELA NEON" type="Sprite" parent="." index="3"]
+
+position = Vector2( 642, 361 )
+texture = ExtResource( 3 )
+
+[node name="Ball" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 640, 360 )
 friction = 0.0
@@ -147,7 +153,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -188,7 +194,7 @@ input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -263,7 +269,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Size Flags", "Theme", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="ComboText" type="Label" parent="." index="8"]
+[node name="ComboText" type="Label" parent="." index="9"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -311,11 +317,11 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
 
-[node name="PlayerGoal" parent="." index="9" instance=ExtResource( 8 )]
+[node name="PlayerGoal" parent="." index="10" instance=ExtResource( 9 )]
 
 position = Vector2( -10, 360 )
 
-[node name="PlayerGoal2" parent="." index="10" instance=ExtResource( 8 )]
+[node name="PlayerGoal2" parent="." index="11" instance=ExtResource( 9 )]
 
 position = Vector2( 1290, 360 )
 POINT_PLAYER = 2
