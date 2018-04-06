@@ -6,7 +6,7 @@
 [ext_resource path="res://imgs/Estrelas Medias.png" type="Texture" id=4]
 [ext_resource path="res://imgs/Estrelas Perto.png" type="Texture" id=5]
 
-[node name="Fundo" type="ParallaxBackground" index="0"]
+[node name="Fundo" type="ParallaxBackground"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -25,7 +25,6 @@ VELOCITY = 100.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="." index="0"]
 
-editor/display_folded = true
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 0, 0 )
@@ -33,6 +32,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="Image" type="Sprite" parent="ParallaxLayer" index="0"]
 
+scale = Vector2( 1.15, 1 )
 texture = ExtResource( 2 )
 centered = false
 region_rect = Rect2( 0, 0, 1280, 720 )
